@@ -11,7 +11,6 @@ from gtts import gTTS
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile
 
 ehun = LINETCR.LINE()
-#nadya.login(qr=True)
 ehun.login(token="Eq0zUXa6AgM5GlX9DOhd.AiuDauRno6zp87MMtt5NRq.hLjQk5cJEYrQc19ExUjNK2OyXjVWbRzEY0swjKoCVuc=")
 ehun.loginResult()
 print "Ehun-Login Success\n\n=====[Sukses Login]====="
