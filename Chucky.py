@@ -11,40 +11,29 @@ from gtts import gTTS
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile
 
 cl = LINETCR.LINE()
-#cl.login(qr=True)
-cl.login(token='TOKEN_KAMU_DISINI_BEIB')
+cl.login(token="EqEJFJ1p8YnzQBksHN89.DoWKKaVjwh/naOep1ooa6q.KDSolBtYPtUQK700/KSGRvc5ieOOpAl2mkg/sAcRdvg=")
 cl.loginResult()
-print "Cl-Login Success\n"
 
 ki = LINETCR.LINE()
-#ki.login(qr=True)
-ki.login(token='TOKEN_KAMU_DISINI_BEIB')
+ki.login(token="EqAH57cRwOnTOcjBQC6e.AKJjgcQRejNwIdH96qxmZG.Wtfm8Xo+BT5Z+7OrYwZu9faC+5LxEmovAoqeWPZ0vck=")
 ki.loginResult()
-print "Ki-Login Success\n"
 
 kk = LINETCR.LINE()
-#kk.login(qr=True)
-kk.login(token='TOKEN_KAMU_DISINI_BEIB')
+kk.login(token="Eq1jZ6yqWJLEAHKpKfq6.YJY4DqhOFDdMybhyGImvnG.Fiab0h02++JLCGu9hdQ6ykiPsLm3W6xeyldsqBaLaz0=")
 kk.loginResult()
-print "Kk-Login Success\n"
 
 kc = LINETCR.LINE()
-#kc.login(qr=True)
-kc.login(token='TOKEN_KAMU_DISINI_BEIB')
+kc.login(token="EqVxhZMWMIxz21WMVWsd.AiuDauRno6zp87MMtt5NRq.gtXdKyydut9IAK8a/foqQtNmoQZzbTYNYq+Ad9mUAAU=")
 kc.loginResult()
-print "Kc-Login Success\n"
 
 kr = LINETCR.LINE()
-#kr.login(qr=True)
-kr.login(token='TOKEN_KAMU_DISINI_BEIB')
+kr.login(token="Eqo3pQg37JUYXYvrlJg1.RNY0mD5hMgMbcfE1tEAyWq.xMI3XZrCT+5sO1YiUYHqvbJyNSGbbHHJOXUzn71kwcE=")
 kr.loginResult()
-print "Kr-Login Success\n"
 
 km = LINETCR.LINE()
-#km.login(qr=True)
-km.login(token='TOKEN_KAMU_DISINI_BEIB')
+km.login(token="Eqz2axjvaZSKwfx7TXF1.8nezDhK7HGW9hVtLK4qvGq.lpD+P9TakwJ4SE5TVxT3KbT13rf2PiwxiuL/4HSWdzI=")
 km.loginResult()
-print "Km-Login Success\n\n=====[Sukses All Login]====="
+print "Login Success\n\n=====[Sukses All Login]====="
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -76,8 +65,6 @@ selfMessage ="""
 ╠➩〘Getvid @〙
 ╠➩〘Friendlist〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -98,8 +85,6 @@ botMessage ="""
 ╠➩〘@bye (Usir Kapten)〙
 ╠➩〘Bye all (Usir Semua)〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -140,8 +125,6 @@ mediaMessage ="""
 ╠➩〘Id@th Text (Translate ID Ke TH〙
 ╠➩〘En@id Text (Translate En Ke ID〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -174,12 +157,8 @@ groupMessage ="""
 ╠➩〘Getgroup image〙
 ╠➩〘Urlgroup Image〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
-tjia="u14f64e139a3817afaabe27d237afb36b"
-
 setMessage ="""
 ╔═════════════════════════
 ║              ☆☞ S E T ☜☆
@@ -191,8 +170,6 @@ setMessage ="""
 ╠➩〘Contact on/off〙
 ╠➩〘Simisimi on/off〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -218,8 +195,6 @@ creatorMessage ="""
 ╠➩〘Bot restart〙
 ╠➩〘Turn off〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -259,8 +234,6 @@ adminMessage ="""
 ╠➩〘Leave on/off〙
 ╠➩〘All join / (TC1/2/3/4 Join)〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -283,8 +256,6 @@ helpMessage ="""
 ╠➩〘Speed test〙
 ╠➩〘Status〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -299,8 +270,6 @@ protectMessage ="""
 ╠➩〘Ghost on/off〙
 ╠➩〘Invitepro on/off〙
 ╠═════════════════════════
-║             💠 By : Nadya 💠
-║    〽️ line.me/ti/p/~nad_nad. 〽️
 ╚═════════════════════════
 """
 
@@ -313,8 +282,8 @@ Cmid = kc.getProfile().mid
 Dmid = kr.getProfile().mid
 Emid = km.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
-Creator=["u14f64e139a3817afaabe27d237afb36b"]
-admin=["u14f64e139a3817afaabe27d237afb36b","u23ad5ddec0dd0523f9caffad673d693c","u8b2bb5214c1afc77d06901a535c23e30","u57a54b914085fea6f04c19f6fe589057","u94fb89525397a12a24df3642a7335fe7","u3a43893bf65289be03f9fd3a85dab2a7","u787d28e13bd4f94cdca5457cd90efaf4","u86304883a6fa105778bfdf13f467eaf0"]
+Creator=["ub3808de9f7df35f57fb366d157f9790a"]
+admin=["ub3808de9f7df35f57fb366d157f9790a"]
 
 contact = cl.getProfile()
 backup1 = cl.getProfile()
@@ -1273,7 +1242,7 @@ def bot(op):
                             random.choice(KAC).sendText(msg.to,"Ditambahkan")
 		    else:
 			cl.sendText(msg.to,"Admin Detected~")
-			
+
 
                 elif wait["dblacklist"] == True:
                     if msg.contentMetadata["mid"] in wait["blacklist"]:
@@ -1284,8 +1253,6 @@ def bot(op):
                     else:
                         wait["dblacklist"] = False
                         random.choice(KAC).sendText(msg.to,"Tidak Ada Black List")
-            
-                    
  
                 elif wait["Contact"] == True:
                      msg.contentType = 0
@@ -1339,22 +1306,23 @@ def bot(op):
  
             elif msg.text in ["Creator","Owner"]:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': tjia}
+                msg.contentMetadata = {'mid': 'ub3808de9f7df35f57fb366d157f9790a'} 
+                cl.sendText(msg.to,"===================")
                 cl.sendMessage(msg)
 		cl.sendText(msg.to,"Itu Majikan Kami (^_^)")
 		
             elif msg.text in ["Admin","admin"]:
                 msg.contentType = 13
-                admin1 = "u23ad5ddec0dd0523f9caffad673d693c"
-                admin2 = "u8b2bb5214c1afc77d06901a535c23e30"
-                admin3 = "u57a54b914085fea6f04c19f6fe589057"
-                msg.contentMetadata = {'mid': tjia}
-                random.choice(KAC).sendMessage(msg)
+                admin1 = "ub3808de9f7df35f57fb366d157f9790a"
+                #admin2 = "u8b2bb5214c1afc77d06901a535c23e30"
+                #admin3 = "u57a54b914085fea6f04c19f6fe589057"
+                #msg.contentMetadata = {'mid': tjia}
+                #random.choice(KAC).sendMessage(msg)
                 msg.contentMetadata = {'mid': admin1}
                 random.choice(KAC).sendMessage(msg)
-                msg.contentMetadata = {'mid': admin2}
-                random.choice(KAC).sendMessage(msg)
-                msg.contentMetadata = {'mid': admin3}
+                #msg.contentMetadata = {'mid': admin2}
+                #random.choice(KAC).sendMessage(msg)
+                #msg.contentMetadata = {'mid': admin3}
                 random.choice(KAC).sendMessage(msg)                
 		random.choice(KAC).sendText(msg.to,"Itu Admin Kami (^_^)")	
 		
@@ -2695,7 +2663,7 @@ def bot(op):
                 random.choice(KAC).inviteIntoGroup(msg.to,[midd])
 
             elif "Invite creator" in msg.text:
-                midd = "u14f64e139a3817afaabe27d237afb36b"
+                midd = "ub3808de9f7df35f57fb366d157f9790a"
                 random.choice(KAC).inviteIntoGroup(msg.to,[midd])
 
             elif msg.text in ["Welcome","welcome","Welkam","welkam","Wc","wc"]:
@@ -3095,7 +3063,7 @@ def bot(op):
 			    cl.inviteIntoGroup(msg.to, targets)
  
 
-	    elif msg.text in ["Bot restart","Reboot"]:
+	    elif msg.text in ["Restart","restart"]:
 		if msg.from_ in Creator:
 		    cl.sendText(msg.to, "Bot Has Been Restarted...")
 		    restart_program()
