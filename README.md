@@ -24,7 +24,7 @@ Di C9 :
 - Ketik -> `cd Chucky`
 - Ketik -> `python Chucky.py`
 
-Di Termux :
+Di Termux : Tinggal masok kn mid kalian
 - Ketik -> `pkg update`
 - Ketik -> `pkg install git`
 - Ketik -> `pkg install python2`
@@ -51,8 +51,8 @@ Di Termux :
 
 Credit By@ Nadya Sutjiadi.
 ------
-- `Follow My Instagram : nadya.tjia`
-- `Add My ID LINE : nad_nad. (pake titik)`
+- `Follow My Instagram : Ehun`
+- `Add My LINE : http://line.me/ti/p/~sarehun
 
 Thx To :
 ------
