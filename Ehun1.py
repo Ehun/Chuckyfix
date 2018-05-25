@@ -266,9 +266,8 @@ Bots=[mid,Amid,Bmid]
 Induk=[mid]
 Induk2=[Amid]
 
-Creator=["ub3808de9f7df35f57fb366d157f9790a"]
-#u0f1095ca6fbe596611959be6756fe6ef","u908522fd38bcbad73012db77cd6e6718","u908522fd38bcbad73012db77cd6e6718"]
-admin=["ub3808de9f7df35f57fb366d157f9790a","u0f1095ca6fbe596611959be6756fe6ef","u908522fd38bcbad73012db77cd6e6718","u908522fd38bcbad73012db77cd6e6718"]
+Creator=["ub3808de9f7df35f57fb366d157f9790a","u26067ba6cb7081be09438fe5d8474bc2"]
+admin=["ub3808de9f7df35f57fb366d157f9790a","u26067ba6cb7081be09438fe5d8474bc2"]
 Id=["Ue0ef65db0f58c0a5a8572a264a6b9014"]
 
 contact = ehun.getProfile()
