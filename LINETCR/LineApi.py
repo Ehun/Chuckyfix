@@ -213,4 +213,121 @@ class LINE:
       if r.status_code != 201:
          raise Exception('Upload image failure.')
       return True
+      
+  def sendVideo(self, to_, path):
+      M = Message(to=to_,contentType = 2)
+      M.contentMetadata = {
+           'VIDLEN' : '0',
+           'DURATION' : '0'
+       }
+      M.contentPreview = None
+      M_id = self.Talk.client.sendMessage(0,M).id
+      files = {
+         'file': open(path, 'rb'),
+      }
+      params = {
+         'name': 'media',
+         'oid': M_id,
+         'size': len(open(path, 'rb').read()),
+         'type': 'video',
+         'ver': '1.0',
+      }
+      data = {
+         'params': json.dumps(params)
+      }
+      r = self.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+      if r.status_code != 201:
+         raise Exception('Upload image failure.')
+      return True
+      
+  def sendVideoWithURL(self, to_, url):
+      path = 'pythonLines.data'
+      r = requests.get(url, stream=True)
+      if r.status_code == 200:
+         with open(path, 'w') as f:
+            shutil.copyfileobj(r.raw, f)
+      else:
+         raise Exception('Download Audio failure.')
+      try:
+         self.sendVideo(to_, path)
+      except Exception as e:
+         raise e
+         
+  def sendGif(self, to_, path):
+      M = Message(to=to_,contentType = 1)
+      M.contentMetadata = {
+           'VIDLEN' : '0',
+           'DURATION' : '0'
+       }
+      M.contentPreview = None
+      M_id = self.Talk.client.sendMessage(0,M).id
+      files = {
+         'file': open(path, 'rb'),
+      }
+      params = {
+         'name': 'media',
+         'oid': M_id,
+         'size': len(open(path, 'rb').read()),
+         'type': 'image',
+         'ver': '1.0',
+      }
+      data = {
+         'params': json.dumps(params)
+      }
+      r = self.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+      if r.status_code != 201:
+         raise Exception('Upload Gif failure.')
+      return True
+      
+  def sendGifWithURL(self, to_, url):
+      path = 'pythonLiness.data'
+      r = requests.get(url, stream=True)
+      if r.status_code == 200:
+         with open(path, 'w') as f:
+            shutil.copyfileobj(r.raw, f)
+      else:
+         raise Exception('Download Gif failure.')
+      try:
+         self.sendGif(to_, path)
+      except Exception as e:
+         raise e         
+
+  def sendEvent(self, messageObject):
+        return self.Talk.client.sendEvent(0, messageObject)
+
+  def sendChatChecked(self, mid, lastMessageId):
+        return self.Talk.client.sendChatChecked(0, mid, lastMessageId)
+
+  def getMessageBoxCompactWrapUp(self, mid):
+        return self.Talk.client.getMessageBoxCompactWrapUp(mid)
+
+  def getMessageBoxCompactWrapUpList(self, start, messageBox):
+        return self.Talk.client.getMessageBoxCompactWrapUpList(start, messageBox)
+
+  def getRecentMessages(self, messageBox, count):
+        return self.Talk.client.getRecentMessages(messageBox.id, count)
+
+  def getMessageBox(self, channelId, messageboxId, lastMessagesCount):
+        return self.Talk.client.getMessageBox(channelId, messageboxId, lastMessagesCount)
+
+  def getMessageBoxList(self, channelId, lastMessagesCount):
+        return self.Talk.client.getMessageBoxList(channelId, lastMessagesCount)
+
+  def getMessageBoxListByStatus(self, channelId, lastMessagesCount, status):
+        return self.Talk.client.getMessageBoxListByStatus(channelId, lastMessagesCount, status)
+
+  def getMessageBoxWrapUp(self, mid):
+        return self.Talk.client.getMessageBoxWrapUp(mid)
+
+  def getMessageBoxWrapUpList(self, start, messageBoxCount):
+        return self.Talk.client.getMessageBoxWrapUpList(start, messageBoxCount)
         
+  def getCover(self,mid):
+        h = self.getHome(mid)
+        objId = h["result"]["homeInfo"]["objectId"]
+        return "http://dl.profile.line-cdn.net/myhome/c/download.nhn?userid=" + mid+ "&oid=" + objId        
+
+  """Contact"""
+
+
+  def        
