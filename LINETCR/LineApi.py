@@ -328,6 +328,111 @@ class LINE:
         return "http://dl.profile.line-cdn.net/myhome/c/download.nhn?userid=" + mid+ "&oid=" + objId        
 
   """Contact"""
+     
+  def blockContact(self, mid):
+        return self.Talk.client.blockContact(0, mid)
 
 
-  def        
+  def unblockContact(self, mid):
+        return self.Talk.client.unblockContact(0, mid)
+
+
+  def findAndAddContactsByMid(self, mid):
+        return self.Talk.client.findAndAddContactsByMid(0, mid)
+
+
+  def findAndAddContactsByMids(self, midlist):
+        for i in midlist:
+            self.Talk.client.findAndAddContactsByMid(0, i)
+
+  def findAndAddContactsByUserid(self, userid):
+        return self.Talk.client.findAndAddContactsByUserid(0, userid)
+
+  def findContactsByUserid(self, userid):
+        return self.Talk.client.findContactByUserid(userid)
+
+  def findContactByTicket(self, ticketId):
+        return self.Talk.client.findContactByUserTicket(ticketId)
+
+  def getAllContactIds(self):
+        return self.Talk.client.getAllContactIds()
+
+  def getBlockedContactIds(self):
+        return self.Talk.client.getBlockedContactIds()
+
+  def getContact(self, mid):
+        return self.Talk.client.getContact(mid)
+
+  def getContacts(self, midlist):
+        return self.Talk.client.getContacts(midlist)
+
+  def getFavoriteMids(self):
+        return self.Talk.client.getFavoriteMids()
+
+  def getHiddenContactMids(self):
+        return self.Talk.client.getHiddenContactMids()
+
+  def CloneContactProfile(self, mid):
+	contact = self.getContact(mid)
+	home = self.getHome(mid)
+	objId = home["result"]["homeInfo"]["objectId"]
+	profile = self.getProfile()
+	profile.displayName = contact.displayName
+	profile.statusMessage = contact.statusMessage
+	profile.pictureStatus = contact.pictureStatus
+	self.updateDisplayPicture(profile.pictureStatus)
+	return self.updateProfile(profile)
+
+  """Group"""
+
+  def findGroupByTicket(self, ticketId):
+        return self.Talk.client.findGroupByTicket(ticketId)
+
+  def acceptGroupInvitation(self, groupId):
+        return self.Talk.client.acceptGroupInvitation(0, groupId)
+
+  def acceptGroupInvitationByTicket(self, groupId, ticketId):
+        return self.Talk.client.acceptGroupInvitationByTicket(0, groupId, ticketId)
+
+  def cancelGroupInvitation(self, groupId, contactIds):
+        return self.Talk.client.cancelGroupInvitation(0, groupId, contactIds)
+
+  def createGroup(self, name, midlist):
+        return self.Talk.client.createGroup(0, name, midlist)
+
+  def getGroup(self, groupId):
+        return self.Talk.client.getGroup(groupId)
+
+  def getGroups(self, groupIds):
+        return self.Talk.client.getGroups(groupIds)
+
+  def getGroupIdsInvited(self):
+        return self.Talk.client.getGroupIdsInvited()
+
+  def getGroupIdsJoined(self):
+        return self.Talk.client.getGroupIdsJoined()
+
+  def inviteIntoGroup(self, groupId, midlist):
+        return self.Talk.client.inviteIntoGroup(0, groupId, midlist)
+
+  def kickoutFromGroup(self, groupId, midlist):
+        return self.Talk.client.kickoutFromGroup(0, groupId, midlist)
+
+  def leaveGroup(self, groupId):
+        return self.Talk.client.leaveGroup(0, groupId)
+
+  def rejectGroupInvitation(self, groupId):
+        return self.Talk.client.rejectGroupInvitation(0, groupId)
+
+  def reissueGroupTicket(self, groupId):
+        return self.Talk.client.reissueGroupTicket(groupId)
+
+  def updateGroup(self, groupObject):
+        return self.Talk.client.updateGroup(0, groupObject)
+        
+  def findGroupByTicket(self,ticketId):
+        return self.Talk.client.findGroupByTicket(0,ticketId)
+
+  """Room"""
+
+  def 
