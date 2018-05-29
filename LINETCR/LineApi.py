@@ -159,3 +159,58 @@ class LINE:
         if r.status_code != 201:
             raise Exception('Upload image failure.')
         return True
+
+    def sendImageWithURL(self, to_, url):
+        """Send a image with given image url
+        :param url: image url to send
+        """
+        path = 'pythonLine.data'
+
+        r = requests.get(url, stream=True)
+        if r.status_code == 200:
+            with open(path, 'w') as f:
+                shutil.copyfileobj(r.raw, f)
+        else:
+            raise Exception('Download image failure.')
+
+        try:
+            self.sendImage(to_, path)
+        except Exception as e:
+            raise e
+
+  def sendAudioWithURL(self, to_, url):
+      path = 'pythonLiness.data'
+      r = requests.get(url, stream=True)
+      if r.status_code == 200:
+         with open(path, 'w') as f:
+            shutil.copyfileobj(r.raw, f)
+      else:
+         raise Exception('Download Audio failure.')
+      try:
+         self.sendAudio(to_, path)
+      except Exception as e:
+         raise e
+         
+  def sendAudio(self, to_, path):
+      M = Message(to=to_,contentType = 3)
+      M.contentMetadata = None
+      M.contentPreview = None
+      M_id = self.Talk.client.sendMessage(0,M).id
+      files = {
+         'file': open(path, 'rb'),
+      }
+      params = {
+         'name': 'media',
+         'oid': M_id,
+         'size': len(open(path, 'rb').read()),
+         'type': 'audio',
+         'ver': '1.0',
+      }
+      data = {
+         'params': json.dumps(params)
+      }
+      r = self.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+      if r.status_code != 201:
+         raise Exception('Upload image failure.')
+      return True
+        
