@@ -109,3 +109,37 @@ class LINE:
         return self.Poll.stream()
 
   """Message"""
+
+  def kedapkedip(self, tomid, text):
+        M = Message()
+        M.to = tomid
+        t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82"
+        t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
+        rst = t1 + text + t2
+        M.text = rst.replace("\n", " ")
+        return self.Talk.client.sendMessage(0, M)
+        
+  def removeAllMessages(self, lastMessageId):
+        return self.Talk.client.removeAllMessages(0,lastMessageId)        
+
+  def sendMessage(self, messageObject):
+        return self.Talk.client.sendMessage(0,messageObject)
+
+  def sendText(self, Tomid, text):
+        msg = Message()
+        msg.to = Tomid
+        msg.text = text
+
+        return self.Talk.client.sendMessage(0, msg)
+  def post_content(self, url, data=None, files=None):
+        return self._session.post(url, headers=self._headers, data=data, files=files)
+
+  def sendImage(self, to_, path):
+        M = Message(to=to_, text=None, contentType = 1)
+        M.contentMetadata = None
+        M.contentPreview = None
+        M_id = self.Talk.client.sendMessage(0,M).id
+        files = {
+            'file': open(path, 'rb'),
+        }
+        
