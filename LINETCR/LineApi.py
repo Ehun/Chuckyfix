@@ -24,8 +24,8 @@ class LINE:
   def __init__(self):
     self.Talk = Talk()
     self._session = requests.session() 
-#    self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0'} 
-    self._headers = {'X-Line-Application': 'CHROMEOS 8.2.1 NADYA-TJ x64'}    
+    self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0'} 
+      
     
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
@@ -48,7 +48,8 @@ class LINE:
     self._headers = {
               'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0', 
 #              'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.1', 
-              'User-Agent': 'Line/8.2.1'
+              'User-Agent': 'Line/7.14.0'
+#8.2.1'
    }
    
     self.Poll = Poll(self.authToken)
@@ -435,4 +436,79 @@ class LINE:
 
   """Room"""
 
-  def 
+   def createRoom(self, midlist):
+    return self.Talk.client.createRoom(0, midlist)
+
+  def getRoom(self, roomId):
+    return self.Talk.client.getRoom(roomId)
+
+  def inviteIntoRoom(self, roomId, midlist):
+    return self.Talk.client.inviteIntoRoom(0, roomId, midlist)
+
+  def leaveRoom(self, roomId):
+    return self.Talk.client.leaveRoom(0, roomId)
+
+  """TIMELINE"""
+
+  def new_post(self, text):
+    return self.channel.new_post(text)
+
+  def like(self, mid, postid, likeType=1001):
+    return self.channel.like(mid, postid, likeType)
+
+  def comment(self, mid, postid, text):
+    return self.channel.comment(mid, postid, text)
+
+  def activity(self, limit=20):
+    return self.channel.activity(limit)
+
+  def getAlbum(self, gid):
+
+      return self.channel.getAlbum(gid)
+  def changeAlbumName(self, gid, name, albumId):
+      return self.channel.changeAlbumName(gid, name, albumId)
+
+  def deleteAlbum(self, gid, albumId):
+      return self.channel.deleteAlbum(gid,albumId)
+
+  def getNote(self,gid, commentLimit, likeLimit):
+      return self.channel.getNote(gid, commentLimit, likeLimit)
+
+  def getDetail(self,mid):
+      return self.channel.getDetail(mid)
+
+  def getHome(self,mid):
+      return self.channel.getHome(mid)
+
+  def createAlbum(self, gid, name):
+      return self.channel.createAlbum(gid,name)
+
+  def createAlbum2(self, gid, name, path):
+      return self.channel.createAlbum(gid, name, path, oid)
+
+
+  def __validate(self, mail, passwd, cert, token, qr):
+    if mail is not None and passwd is not None and cert is None:
+      return 1
+    elif mail is not None and passwd is not None and cert is not None:
+      return 2
+    elif token is not None:
+      return 3
+    elif qr is True:
+      return 4
+    else:
+      return 5
+
+  def loginResult(self, callback=True):
+    if callback is True:
+      callback = def_callback
+
+      prof = self.getProfile()
+
+      print("===============[Chucky_Bot]================")
+      print("        Thanks for TCR and my friend")
+      print("===============[© By_Ehun]================")
+      print("mid -> " + prof.mid)
+      print("name -> " + prof.displayName)
+      print("authToken -> " + self.authToken)
+      print("cert -> " + self.cert if self.cert is not None else "")
